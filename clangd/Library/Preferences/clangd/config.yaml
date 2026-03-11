@@ -1,0 +1,32 @@
+If:
+  PathMatch: .*\.(c|h)
+CompileFlags:
+  Add:
+    - -std=c17
+    - -Wall
+    - -Wextra
+    - -Werror
+    - -pedantic
+    - -g
+    - -O0
+    - -fanitize=address,undefined
+    - -fno-omit-frame-pointers
+---
+If:
+  PathMatch: .*\.(cpp|cc|cxx|hpp)
+CompileFlags:
+  Add:
+    - -std=c++23
+    - -Wall
+    - -Wextra
+    - -Wpedantic
+    - -Wshadow
+    - -Wconversion
+    - -Wsign-conversion
+    - -Wnull-dereference
+    - -Wdouble-promotion
+    - -Werror=return-type
+    - -g
+    - -fsanitize=address,undefined
+    - -fno-omit-frame-pointer
+    - -O1
