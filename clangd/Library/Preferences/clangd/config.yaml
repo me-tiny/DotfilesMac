@@ -9,8 +9,8 @@ CompileFlags:
     - -pedantic
     - -g
     - -O0
-    - -fanitize=address,undefined
-    - -fno-omit-frame-pointers
+    - -fsanitize=address,undefined
+    - -fno-omit-frame-pointer
 ---
 If:
   PathMatch: .*\.(cpp|cc|cxx|hpp)
