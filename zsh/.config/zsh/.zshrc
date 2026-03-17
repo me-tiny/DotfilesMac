@@ -77,6 +77,7 @@ zstyle ':completion:*' "${(s.:.)LS_COLORS}"
 ############
 typeset -a sources
 sources+="$ZDOTDIR/aliases/aliases" # Aliases
+sources+="$ZDOTDIR/aliases/priv_aliases"
 # Plugins
 sources+="$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" # Syntax highlighting
 sources+="$ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" # Autosuggestions
