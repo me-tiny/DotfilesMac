@@ -58,11 +58,8 @@ alias dif="git diff --no-index" # Diff two files even if not in git repo
 ########
 
 if command -v 'tmux' >/dev/null; then
-  # Start tmux.
-  alias tm='tmux'
-
   # Attach to a tmux session.
-  alias tma="tmux attach-session"
+  alias tma="tmux attach-session || tmux"
 
   # Attach to a tmux session with name.
   alias tmat="tmux attach-session -t"
