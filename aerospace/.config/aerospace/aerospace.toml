@@ -21,31 +21,31 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 on-focus-changed = ['move-mouse window-lazy-center']
 
 [[on-window-detected]]
-if.app-id = 'com.1password.1password'
+  if.app-id = 'com.1password.1password'
   run = 'layout floating'
 
 [[on-window-detected]]
-if.app-id = 'com.apple.finder'
+  if.app-id = 'com.apple.finder'
   run = 'layout floating'
 
 [[on-window-detected]]
-if.app-id = 'com.apple.ActivityMonitor'
+  if.app-id = 'com.apple.ActivityMonitor'
   run = 'layout floating'
 
 [[on-window-detected]]
-if.app-id = 'com.apple.mail'
+  if.app-id = 'com.apple.mail'
   run = 'layout floating'
 
 [[on-window-detected]]
-if.app-id = 'com.apple.MobileSMS'
+  if.app-id = 'com.apple.MobileSMS'
   run = 'layout floating'
 
 [[on-window-detected]]
-if.app-id = 'com.python.python'
+  if.app-id = 'com.python.python'
   run = 'layout floating'
 
 [[on-window-detected]]
-if.app-id = 'com.netacad.PacketTracer8.2.2'
+  if.app-id = 'com.netacad.PacketTracer8.2.2'
   run = 'layout floating'
 
 [[on-window-detected]]
@@ -73,15 +73,19 @@ if.app-id = 'com.apple.Photos'
   run = 'layout floating'
 
 [[on-window-detected]]
-if.app-id = 'com.hnc.Discord'
+  if.window-title-regex-substring = 'Quartz 2'
+  run = 'layout floating'
+
+[[on-window-detected]]
+  if.app-id = 'com.hnc.Discord'
   run = 'move-node-to-workspace 🎵'
 
 [[on-window-detected]]
-if.app-id = 'com.spotify.client'
+  if.app-id = 'com.spotify.client'
   run = 'move-node-to-workspace 🎵'
 
 [[on-window-detected]]
-  if.app-id = 'NULL-APP-BUNDLE-ID'
+  if.app-id = 'net.runelite.launcher'
   run = 'layout floating'
 
 [workspace-to-monitor-force-assignment]
