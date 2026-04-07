@@ -80,6 +80,10 @@ if.app-id = 'com.hnc.Discord'
 if.app-id = 'com.spotify.client'
   run = 'move-node-to-workspace 🎵'
 
+[[on-window-detected]]
+  if.app-id = 'NULL-APP-BUNDLE-ID'
+  run = 'layout floating'
+
 [workspace-to-monitor-force-assignment]
 '💻' = 'main'
 '🎵' = 'secondary' # Secondary, mainly music/discord
