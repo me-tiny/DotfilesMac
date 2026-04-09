@@ -91,7 +91,7 @@ alias lst="eza --color=always --group-directories-first --tree --level=4"
 #######
 alias cat="bat --paging=never"
 
-##########
-# cht.sh #
-##########
-alias wtf="xargs -I STRING cht.sh STRING <<<"
+########
+# tldr #
+########
+alias tl="tldr --list | fzf --preview 'tldr {} --color always' | xargs tldr"
