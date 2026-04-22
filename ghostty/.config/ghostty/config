@@ -1,9 +1,11 @@
 # Theme
-theme = Catppuccin Mocha
+theme = Rose Pine
 
 # Font
 # font-family = "Berkeley Mono"
-font-family = "MonoLisa"
+# font-family = "MonoLisa"
+font-family = "MonoLisa Variable"
+font-family = "Symbols Nerd Font Mono"
 
 # Berkeley Mono
 # font-style = "Condensed"
@@ -31,10 +33,10 @@ font-thicken = false
 # font-feature = ss14
 # font-feature = ss17
 
-# font-variation = wght=600
-# font-variation-bold = wght=800
-# font-variation-italic = wght=600
-# font-variation-bold-italic = wght=800
+font-variation = wght=600
+font-variation-bold = wght=800
+font-variation-italic = wght=600
+font-variation-bold-italic = wght=800
 
 # Undercurl
 adjust-underline-thickness = 1
