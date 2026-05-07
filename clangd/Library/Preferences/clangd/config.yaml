@@ -2,15 +2,15 @@ If:
   PathMatch: .*\.(c|h)
 CompileFlags:
   Add:
-    - -std=c17
+    - -std=c89
     - -Wall
     - -Wextra
-    - -Werror
     - -pedantic
     - -g
-    - -O0
+    - -xc
     - -fsanitize=address,undefined
     - -fno-omit-frame-pointer
+    - -O1
 ---
 If:
   PathMatch: .*\.(cpp|cc|cxx|hpp)
