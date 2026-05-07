@@ -67,7 +67,7 @@ confirm-close-surface = false
 scrollback-limit = 10000000
 auto-update = check
 custom-shader-animation = false
-shell-integration-features = no-cursor,no-sudo,title
+shell-integration-features = no-cursor,no-sudo,title,ssh-env
 
 # Clipboard
 clipboard-read = allow
