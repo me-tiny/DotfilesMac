@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+file=$1
+
+if [[ ! -f "$file" || "${file:e}" != "cpp" ]]; then
+    echo "need .cpp file to compile and run"
+    exit 1
+fi
+
+output="${file:r}.o"
+
+if clang++ -std=c++23 -O3 -DNDEBUG "$file" -o "$output"; then
+    "${output:a}"
+else
+    echo "build failed"
+    exit1
+fi

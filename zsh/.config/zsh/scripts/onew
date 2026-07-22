@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+if [ -z "$1" ]; then
+    echo "Error: A file name must be set"
+    exit 1
+fi
+
+title="$1"
+file_name=$(echo "$title" | sed 's/[ \/]/-/g')
+id=${file_name}_$(date "+%Y-%m-%d")
+formatted_file_name=${id}.md
+
+vault_dir="/home/metin/Documents/Obsidian/Main"
+template_file="$vault_dir/templates/note.md"
+destination="$vault_dir/inbox/${formatted_file_name}"
+
+date_str=$(date "+%Y-%m-%d")
+
+sed -e "s|{{title}}|$title|g" -e "s|{{date}}|$date_str|g" -e "s|{{id}}|$id|g" "$template_file" > "$destination"
+
+nvim "$destination"

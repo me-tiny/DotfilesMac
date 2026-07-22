@@ -1,0 +1,4 @@
+setopt EXTENDED_GLOB
+setopt INTERACTIVE_COMMENTS
+setopt AUTO_PUSHD PUSHD_IGNORE_DUPS PUSHD_SILENT
+autoload -Uz add-zsh-hook

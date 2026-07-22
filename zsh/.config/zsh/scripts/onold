@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+if [ -z "$1" ]; then
+    echo "Error: A file name must be set"
+    return
+fi
+file_name=$(echo "$1" | tr ' ' '-')
+formatted_file_name=${file_name}_$(date "+%Y-%m-%d").md
+cd "/home/metin/Documents/Obsidian/Main/"
+
+nvim "inbox/${formatted_file_name}"

@@ -1,9 +1,17 @@
-# export HISTFILE="$ZDOTDIR/.zsh_history"
-# export DOTFILES="$HOME/.dotfiles"
-# export PATH="$PATH:$HOME/go/bin"
-# export PATH="/opt/homebrew/bin:$PATH"
-# export PATH="/opt/homebrew/opt/openvpn/sbin:$PATH"
-# export PATH="$PATH:$HOME/Library/Python/3.9/bin"
-# export PATH="$ZDOTDIR/scripts:$PATH"
-# export PATH="$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin"
-# . "$HOME/.cargo/env"
+export DOTFILES="$HOME/.dotfiles"
+export HISTFILE="$ZDOTDIR/.zsh_history"
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+export MANPAGER="nvim +Man!"
+
+typeset -U path PATH
+path=(
+    $ZDOTDIR/scripts
+    $ZDOTDIR/.cargo/bin
+    $HOME/.local/bin
+    $HOME/go/bin
+    /opt/homebrew/bin/
+    /opt/homebrew/opt/openvpn/sbin
+    $path
+)

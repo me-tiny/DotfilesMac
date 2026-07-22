@@ -1,0 +1,43 @@
+#!/bin/zsh
+
+set -euo pipefail
+
+REPO_URL="git@github.com:neovim/neovim"
+INSTALL_PREFIX="/usr/local"
+BUILD_TYPE="Release"
+EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX}"
+
+cleanup() {
+    if [[ -n "${TMP_DIR:-}" && -d "${TMP_DIR}" ]]; then
+        echo "Cleaning up temporary directory: ${TMP_DIR}"
+        rm -rf "${TMP_DIR}"
+        echo "done, nvim built from source into ${INSTALL_PREFIX}."
+    fi
+}
+
+SUDO_CMD=""
+if [[ $EUID -ne 0 ]]; then
+    if command -v sudo >/dev/null; then
+        SUDO_CMD="sudo"
+        echo "sudo privileges needed to install to ${INSTALL_PREFIX}"
+        $SUDO_CMD -v
+    else
+        echo "error: sudo is required to install to ${INSTALL_PREFIX} but not found."
+        exit 1
+    fi
+fi
+
+
+TMP_DIR=$(mktemp -d -t nvim_install_XXXXXX)
+trap cleanup EXIT INT TERM
+
+echo "cloning nvim into ${TMP_DIR}..."
+git clone --depth 1 "${REPO_URL}" "${TMP_DIR}"
+
+cd "${TMP_DIR}"
+
+echo "building nvim (${BUILD_TYPE})..."
+make CMAKE_BUILD_TYPE="${BUILD_TYPE}" CMAKE_EXTRA_FLAGS="${EXTRA_FLAGS}"
+
+echo "installing to ${INSTALL_PREFIX}..."
+${SUDO_CMD} make install

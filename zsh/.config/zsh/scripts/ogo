@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+VAULT_DIR="/home/metin/Documents/Obsidian/Main"
+SOURCE_DIR="uncategorised"
+DEST_DIR="notes"
+
+find "$VAULT_DIR/$SOURCE_DIR" -type f -name "*.md" | while read -r file; do
+    echo "Processing $file"
+    tag=$(awk '/tag:/{print $2; exit;}' "$file" | sed 's/^ *//;s/ *$//')
+    echo "Found tag $tag"
+    if [ ! -z "$tag" ]; then
+        TARGET_DIR="$VAULT_DIR/$DEST_DIR/$tag"
+        mkdir -p "$TARGET_DIR"
+
+        mv "$file" "$TARGET_DIR"
+        echo "Moved $file to $TARGET_DIR"
+    else
+        echo "No tag found for $file"
+    fi
+done
+echo "Done!"

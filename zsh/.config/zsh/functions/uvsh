@@ -1,0 +1,22 @@
+#!/bin/zsh
+
+uvsh() {
+    if [[ -n ${VIRTUAL_ENV} ]]; then
+        echo "[INFO] deactivating venv: ${VIRTUAL_ENV:t}"
+        deactivate
+        return
+    fi
+
+    local venv_name=${1:-.venv}
+    venv_name=${venv_name%/}
+
+    local activator="${venv_name}/bin/activate"
+
+    if [[ ! -f ${activator} ]]; then
+        echo "[ERROR] python venv not found: ${venv_name}"
+        return 1
+    fi
+
+    echo "[INFO] activating venv: ${venv_name} (via ${activator})"
+    source "${activator}"
+}

@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+if ! pgrep -x "hypridle" > /dev/null; then
+    hypridle > /dev/null & disown
+    notify-send "💤 PC will now sleep"
+else
+    killall hypridle
+    notify-send "☕ PC will stay awake"
+fi
