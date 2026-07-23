@@ -1,79 +1,45 @@
 # Theme
-theme = Rose Pine
+theme = Catppuccin Mocha
 
-# Font
-# font-family = "Berkeley Mono"
-# font-family = "MonoLisa"
-font-family = "MonoLisa Variable"
+font-family = "MonoLisaCode"
 font-family = "Symbols Nerd Font Mono"
 
-# Berkeley Mono
-# font-style = "Condensed"
-# font-style-italic = "Condensed Oblique"
-# font-style-bold = "Bold Condensed"
-# font-style-bold-italic = "Bold Condensed Oblique"
-# MonoLisa
-font-style = "Regular"
-font-style-italic = "Regular Italic"
-font-style-bold = "Bold"
-font-style-bold-italic = "Bold Italic"
-
-font-size = 16
-font-synthetic-style = false
-
-font-thicken = false
-
-# font-feature = calt
-# font-feature = ss01
-# font-feature = ss02
-# font-feature = ss07
-# font-feature = ss08
-# font-feature = ss12
-# font-feature = ss13
-# font-feature = ss14
-# font-feature = ss17
+font-feature = -liga
+font-feature = ss10
 
 font-variation = wght=450
 font-variation-bold = wght=800
 font-variation-italic = wght=450
 font-variation-bold-italic = wght=800
 
-# Undercurl
+# font-variation = GRAD=0
+
+font-size = 16
+font-synthetic-style = false
+
+font-thicken = false
+
 adjust-underline-thickness = 1
 adjust-underline-position = 1
 
-# Remap glyphs and powerline symbols
-# font-codepoint-map = U+e000-U+e00a,U+ea60-U+ebeb,U+e0a0-U+e0c8,U+e0ca,U+e0cc-U+e0d4,U+e200-U+e2a9,U+e300-U+e3e3,U+e5fa-U+e6b1,U+e700-U+e7c5,U+f000-U+f2e0,U+f300-U+f372,U+f400-U+f532,U+f0001-U+f1af0=Symbols Nerd Font Mono
-# Not sure why setting this to powerline symbols breaks it?
-# It also breaks if I completely comment it out 💀
-# font-codepoint-map = U+E0A0-U+E0A3,U+E0C0-U+E0C7,U+E0B0-U+E0B3=
-
-
-# Cursor
 cursor-style = block
 cursor-style-blink = false
 
-# Window
 window-decoration = false
 window-vsync = true
-# window-padding-y = 5,2
-# window-padding-x = 5
 window-padding-y = 0 
 window-padding-x = 0
 window-padding-balance = true
 confirm-close-surface = false
 
-# Misc
 scrollback-limit = 10000000
 auto-update = check
 custom-shader-animation = false
 shell-integration-features = no-cursor,no-sudo,title,ssh-env
 
-# Clipboard
 clipboard-read = allow
 clipboard-write = allow
 
-# Clears keybinds
 keybind = clear
 macos-option-as-alt = true
 
